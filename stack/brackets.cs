@@ -1,3 +1,7 @@
+//Given a string containing only '(', ')', '{', '}', '[', ']', determine if the input string is valid. 
+//Brackets must close in the correct order
+//Input: "({[]})" Output: true Input: "(]" Output: false
+
 using System;
 using System.Collections.Generic;
 class HelloWorld {
