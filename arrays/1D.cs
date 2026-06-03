@@ -21,3 +21,31 @@ class HelloWorld {
 		return summed;
 	}
 }
+
+class HelloWorld {
+	static void Main() {
+	    int[] arr = [0, 1, 3, 12];
+	    int[] nums = MoveOs(arr);
+		Console.WriteLine(string.Join(", ", nums));
+	}
+
+	public static int[] MoveOs(int[] arr) {
+		int count = 0;
+		for (int i = 0; i < arr.Length; i++) {
+			if (arr[i] != 0) {
+				arr[count] = arr[i];
+				count++;
+			}
+		}
+		if (arr.Length == count) {
+			return arr;
+		}
+		else {
+			for (int j = count; j < arr.Length; j++) {
+				arr[j] = 0;
+			}
+		}
+		return arr;
+	}
+
+}
