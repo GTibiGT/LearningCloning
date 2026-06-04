@@ -49,3 +49,55 @@ class HelloWorld {
 	}
 
 }
+
+
+// Given an integer array, return a new array with the elements in reverse order.
+
+// Input:  [1, 2, 3, 4, 5]
+// Output: [5, 4, 3, 2, 1]
+
+public static int[] reverse(int[] arr) {
+		int[] nums = new int[arr.Length];
+		for (int i = 0; i < arr.Length; i++) {
+			nums[(arr.Length-1) - i] = arr[i];
+		}
+		return nums;
+	}
+  
+public static int[] reverse(int[] arr) {
+		for (int i = 0; i < arr.Length/2; i++) {
+			temp = arr[i];
+      arr[i] = arr[(arr.Length-1) - i];
+      arr[(arr.Length-1) - i] = temp;
+		}
+		return arr;
+	}
+
+
+
+// Given an integer array of size n, return the element that appears more than n/2 times. One always exists.
+
+// Input:  [3, 2, 3]
+// Output: 3
+
+// Input:  [2, 2, 1, 1, 2]
+// Output: 2
+
+public static int common(int[] arr) {
+		int criteria = arr.Length/2;
+		Dictionary<int, int> dict = new Dictionary<int, int>();
+		for (int i = 0; i < arr.Length; i++) {
+			if (dict.ContainsKey(arr[i])) {
+				dict[arr[i]]++;
+			}
+			else {
+				dict[arr[i]] = 1;
+			}
+		}
+		foreach (KeyValuePair<int, int> j in dict) {
+			if (j.Value > criteria) {
+				return j.Key;
+			}
+		}
+		return 0;
+	}
